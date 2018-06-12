@@ -1,48 +1,52 @@
 import React, { Component } from 'react';
 import 'font-awesome/css/font-awesome.min.css';
-import ListView from './ListView';
-import list from './list.json';
+import Homepage from './Homepage';
 import '../App.css';
-import SingleView from './SingleView';
+import Login from './Login';
+import Register from './Register';
+import SingleGroup from './SingleGroup';
 
 class App extends Component {
   state = {
-    salongs: [],
-    singleView: false,
-    singleViewId: '',
+    login: true,
+    register: false,
+    homepage: false,
+    singlegroup: false
   };
 
-  componentDidMount() {
-    /**
-     * When Component is "ready", call the function
-     * that will get the list of the data and store it in state
-     */
-    this.getSalongs();
+  handleRegister = () => {
+    this.setState({ register: true, login: false });
+  };
+  handleLogin = () => {
+    this.setState({login:true, register:false})
+  };
+  
+  handleHomepage = () => {
+    this.setState({login: false, homepage: true, singlegroup: false})
+  };
+
+  handleSingleGroup = () => {
+    this.setState({homepage: false, singlegroup: true})
   }
-  getSalongs = () => {
-    this.setState({ salongs: list.data });
-  };
-
-  singleView = (salongId) => {
-    this.setState({ singleView: true, singleViewId: salongId });
-  };
-
-  listView = () => {
-    this.setState({ singleView: false, singleViewId: '' });
-  };
 
   render() {
     let view = (
-      <ListView salongs={this.state.salongs} singleView={this.singleView} />
+      <Login register={this.handleRegister} login={this.handleHomepage}/>
     );
-    if (this.state.singleView) {
+    if (this.state.register) {
       view = (
-        <SingleView
-          salongs={this.state.salongs}
-          salongId={this.state.singleViewId}
-          listView={this.listView}
-        />
+        <Register login={this.handleLogin}/>
       );
+    }
+    else if(this.state.homepage){
+      view = (
+        <Homepage singlegroup={this.handleSingleGroup} />
+      )
+    }
+    else if(this.state.singlegroup){
+      view = (
+        <SingleGroup back={this.handleHomepage}/>
+      )
     }
     return <main className="main-container">{view}</main>;
   }

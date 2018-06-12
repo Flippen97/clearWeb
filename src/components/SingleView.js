@@ -8,12 +8,6 @@ class SingleView extends React.Component {
     hover: false,
     sectionView: true,
   };
-  hoverOn = () => {
-    this.setState({ hover: true });
-  };
-  hoverOff = () => {
-    this.setState({ hover: false });
-  };
   toggleSection = () => {
     this.setState({ sectionView: !this.state.sectionView });
   };
@@ -40,15 +34,8 @@ class SingleView extends React.Component {
               >
                 <i className="fa fa-chevron-left" />
               </span>
-              <span className="singleViewSaveIcon">
-                <i
-                  className={this.state.hover ? 'fa fa-heart' : 'fa fa-heart-o'}
-                  onMouseEnter={this.hoverOn}
-                  onMouseLeave={this.hoverOff}
-                />
-              </span>
               <h2 className="singleViewName"> {salong.name} </h2>
-              <StarRating rating={salong.rating} itemclass="singleViewStars" />
+        
               <span className="singleViewAmountRating">
                 {`(${salong.amountRating})`}
               </span>

@@ -1,6 +1,6 @@
 import React from 'react';
 import ListSalongs from './ListSalongs';
-import FilterMenu from './FilterMenu';
+
 
 class ListView extends React.Component {
   state = {
