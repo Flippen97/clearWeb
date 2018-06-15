@@ -1,3 +1,4 @@
+ /*grid-template-columns: repeat(3, 1fr);*/
 @font-face {
   font-family: FontBureau-MillerBannerLight;
   src: url(FontBureau-MillerBannerLight.otf) format("opentype");
@@ -7,213 +8,200 @@ body {
   padding: 0;
 }
 main{
-  background-color: white;
+  background-image: radial-gradient(circle, #4acef1, #2ec3f4, #12b8f6, #11abf7, #2c9ef5);
   max-width: 420px;
   color: #202020;
+  min-height: 100vh;
 }
 /*
-  Header styling
+  Login Page
 */
-.listView-container header{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  height: 35px;
-  box-sizing: border-box;
-  border-bottom: 1px solid #B69F58;
-}
-.chevronBack{
-  display: flex;
-  align-items: center;
-}
-.chevronBack i{
-  margin-left: 6%;
-  font-size: 1.3em;
-  color:#B69F58;
-}
-.headerTitle{
-  font-family: FontBureau-MillerBannerLight;
-  margin: 0;
-  color:black;
+.LoginForm{
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.4em;
-  font-weight: lighter;
 }
-.filterIcon{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  color:#B69F58;
-}
-.filterIcon i{
-  margin-right: 6%;
-  font-size: 1.3em;
-}
-/*
-  Select Filter styling
-*/
-select {
-  border-radius: 0;
-  width: 100%;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-weight: 300;
-  padding: 5px 35px 5px 10px;
-  font-size: 14px;
-  border: 0;
-  border-bottom: 1px solid #B69F58;
-  height: 30px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: url("select-arrow.svg") no-repeat scroll right 10px center ;
-}
-option{
-  width: 80%;
-}
-/*
-  Listview 
-*/
-.listView-container ul {
-  list-style-type: none;
-  margin: 2%;
-  padding: 0;
-}
-.listView-container ul li{
-  display: grid;
-  grid-template-columns: 15% 65% 15% 5%;
-  box-sizing: border-box;
-  border-bottom: 1px solid #EEEEEE;
-}
-/*
-Salong card styling
-*/
-.salongCardTime{
-  display: flex;
-  justify-content: center;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-weight: 500;
-  font-size: 0.8em;
-  margin-top: 15px;
-}
-.salongCardName{
-  margin: 12px 0 8px 0;
-  font-family: FontBureau-MillerBannerLight;
-  font-size: 1em
-}
-.salongCardStars{
-  color:#B69F58;
-  font-size: 0.7em;
-}
-.salongCardAmountRating{
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-weight: 300;
-  font-size: 0.6em;
-  margin-left: 1%;
-}
-.salongCardAddress{
-  display: block;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-weight: 300;
-  font-size: 0.8em;
-  margin: 5px auto;
-  margin: 5px 0 10px 0;
-}
-.salongCardPrice{
-  display: flex;
-  justify-content: center;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-weight: 500;
-  font-size: 0.8em;
-  margin-top: 15px;
-}
-.salongCardDuration{
-  display: flex;
-  justify-content: center;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-weight: 300;
-  font-size: 0.7em;
-}
-.chevronForward {
-  color:#B69F58;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-/*
-  single View styling
-*/
-.singleViewBackIcon i{
-  margin-left: 3%;
-  font-size: 1.3em;
-  color: white;
-  margin-top: 10px;
-}
-.singleViewSaveIcon i{
-  color: white;
-  font-size: 1.3em;
-  margin-left: 85%;
-  margin-top: 10px;
-}
-.singleViewName{
-  font-family: FontBureau-MillerBannerLight;
-  font-size: 1.2em;
-  display: block;
-  color: white;
-  margin: 145px 0 0 3%;
-}
-.singleViewStars{
-  margin-top: 10px;
-  display: inline-block;
-  color:#B69F58;
-  margin-left: 3%;
-}
-.singleViewAmountRating{
-  display: inline-block;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-weight: 300;
-  font-size: 0.8em;
-  margin-left: 2%;
-  color: white;
-}
-.singleViewNav{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.LoginForm form{
   text-align: center;
 }
-.singleViewNav span{
-  padding: 10px;
+.LoginForm form label{
+  display: block;
 }
-.singleViewNav .singleViewBorderBottom{
-  border-bottom: #B69F58 solid 2px;
+.LoginForm form input{
+  display: block;
+  margin: auto;
+} 
+.LoginForm form p span{
+  font-weight: 700; 
+  color: white;
+  text-decoration: underline;
 }
-.singleViewInfoSection{
-  padding-top: 10px;
-  background-color: #EEEEEE;
+.LoginForm  form button {
+  margin-top: 15px;
+  -webkit-border-radius: 18;
+  -moz-border-radius: 18;
+  border-radius: 18px;
+  font-family: Arial;
+  background: none;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 100px 10px 100px;
+  border: solid #ffffff 2px;
+  text-decoration: none;
 }
-.singleViewInfoSection ul{    
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+/*
+Register Page
+*/
+.RegisterForm{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.singleViewInfoSection ul li{
-  background-color: white;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-weight: 300;
-  font-size: 0.8em;
-  border-bottom: 1px solid #EEEEEE;
-  padding: 12px 20px 12px 20px;
+.RegisterForm form{
+  text-align: center;
 }
-.singleViewInfoSection ul li:nth-last-child(1){
+.RegisterForm form label{
+  display: block;
+}
+.RegisterForm form input{
+  display: block;
+  margin: auto;
+}
+.RegisterForm  form button {
+  margin-top: 15px;
+  -webkit-border-radius: 18;
+  -moz-border-radius: 18;
+  border-radius: 18px;
+  font-family: Arial;
+  background: none;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 80px 10px 80px;
+  border: solid #ffffff 2px;
+  text-decoration: none;
+}
+/*
+  Input Field Styling
+*/
+
+.field{
+  --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #767676);
+  display: inline-block;
+}
+
+.field__input{ 
+  background-color: transparent;
+  border-radius: 0;
   border: none;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: inherit;
+  font-size: 1em;
 }
-.singleViewInfoSection ul li i{
-  width: 20px;
+
+.a-field .field__input:focus{
+  outline: none;
 }
-.singleViewInfoSection p{
-  margin: 0;
+
+.field__input:focus::-webkit-input-placeholder{
+  color: var(--uiFieldPlaceholderColor);
 }
-.singleViewWorkingHours img{
-  margin-left: 20px;
+
+.field__input:focus::-moz-placeholder{
+  color: var(--uiFieldPlaceholderColor);
+  opacity: 1;
+}
+
+.a-field{
+  --uiFieldHeight: var(--fieldHeight, 40px);  
+  --uiFieldBorderWidth: var(--fieldBorderWidth, 2px);
+  --uiFieldBorderColor: var(--fieldBorderColor);
+
+  --uiFieldFontSize: var(--fieldFontSize, 1em);
+  --uiFieldHintFontSize: var(--fieldHintFontSize, 1em);
+
+  --uiFieldPaddingRight: var(--fieldPaddingRight, 15px);
+  --uiFieldPaddingBottom: var(--fieldPaddingBottom, 15px);
+  --uiFieldPaddingLeft: var(--fieldPaddingLeft, 15px);   
+
+  position: relative;
+  box-sizing: border-box;
+  font-size: var(--uiFieldFontSize);
+  padding-top: 1.5em;  
+}
+
+.a-field .field__input{
+  height: var(--uiFieldHeight);
+  padding: 0 var(--uiFieldPaddingRight) 0 var(--uiFieldPaddingLeft);
+  border-bottom: var(--uiFieldBorderWidth) solid var(--uiFieldBorderColor);  
+}
+
+.a-field .field__input::-webkit-input-placeholder{
+  opacity: 0;
+  transition: opacity .2s ease-out;
+}
+
+.a-field .field__input::-moz-placeholder{
+  opacity: 0;
+  transition: opacity .2s ease-out;
+}
+
+.a-field .field__input:not(:placeholder-shown) ~ .field__label-wrap .field__label{
+  opacity: 0;
+  bottom: var(--uiFieldPaddingBottom);
+}
+
+.a-field .field__input:focus::-webkit-input-placeholder{
+  opacity: 1;
+  transition-delay: .2s;
+}
+
+.a-field .field__input:focus::-moz-placeholder{
+  opacity: 1;
+  transition-delay: .2s;
+}
+
+.a-field .field__label-wrap{
+  box-sizing: border-box;
+  width: 100%;
+  height: var(--uiFieldHeight);	
+  pointer-events: none;
+  cursor: text;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.a-field .field__label{
+  position: absolute;
+  left: var(--uiFieldPaddingLeft);
+  bottom: calc(50% - .5em);
+  line-height: 1;
+  font-size: var(--uiFieldHintFontSize);
+  pointer-events: none;
+  transition: bottom .2s cubic-bezier(0.9,-0.15, 0.1, 1.15), opacity .2s ease-out;
+  will-change: bottom, opacity;
+}
+
+.a-field .field__input:focus ~ .field__label-wrap .field__label{
+  opacity: 1;
+  bottom: var(--uiFieldHeight);
+}
+.a-field_a1 .field__input{
+  transition: border-color .2s ease-out;
+  will-change: border-color;
+}
+
+.a-field_a1 .field__input:focus{
+  border-color: var(--fieldBorderColorActive);
+}
+
+.field{
+  --fieldBorderColor: white;
+  --fieldBorderColorActive: white;
 }
