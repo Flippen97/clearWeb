@@ -4,7 +4,12 @@ import Logo from './Logo';
 export default function Register(props){
   return(
     <div className="register">
-      <Logo/>
+      <header className="registerHeader">
+        <div className="registerBack"><i className="fa fa-chevron-left" /><span>Login</span></div>
+        <div className="registerTitle">Registrera</div>
+        <div></div>
+      </header>
+      <Logo />
       <div className="RegisterForm">
         <form>
           <label className="field a-field a-field_a1 page__field">
@@ -29,6 +34,4 @@ export default function Register(props){
         </form>
       </div>
     </div>
-  )
-}
-
+  )} 

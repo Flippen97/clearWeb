@@ -26,11 +26,10 @@ export default class Homepage extends Component{
   render(){
     return(
       <div className="homepage">
-        <header>
-          <h1>Dina grupper</h1>
-          <span onClick={this.handleNewGroup}>
-            +
-          </span>
+        <header className="homepageHeader">
+          <span className="homepageBack"><i className="fa fa-chevron-left" /><span>Logout</span></span>
+          <span className="homepageTitle">Dina grupper</span>
+          <span onClick={this.handleNewGroup} className="newGroup"><i className="fa fa-times-circle-o" aria-hidden="true"></i></span>
         </header>
         {this.state.newGroup && <GroupOptions joinGroup={this.handleJoinGroup} 
                                               newGroup={this.createNewGroup}/>}
