@@ -3,6 +3,12 @@
   font-family: FontBureau-MillerBannerLight;
   src: url(FontBureau-MillerBannerLight.otf) format("opentype");
 }
+
+@font-face{
+  font-family: Airways;
+  src: url(Airways.ttf) format("opentype");
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -16,6 +22,20 @@ main{
 /*
   Login Page
 */
+
+.logo{
+  position: relative;
+  letter-spacing: 4px;
+  text-align: center;
+  top: 90px;
+  font-family: Airways;
+  font-size: 3.6em;
+  margin: 0;
+  color: white;
+  text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+
+
 .LoginForm{
   min-height: 100vh;
   display: flex;
