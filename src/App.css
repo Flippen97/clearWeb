@@ -140,6 +140,19 @@ main{
   background-image: none;
   background-color: white;
 }
+.homepage button{
+  margin-top: 15px;
+  -webkit-border-radius: 18;
+  -moz-border-radius: 18;
+  border-radius: 18px;
+  font-family: Arial;
+  background: #2c9ef5;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 80px 10px 80px;
+  border: solid #ffffff 2px;
+  text-decoration: none;
+}
 .homepageHeader{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -187,6 +200,19 @@ li{
 /*
   singlegroup
 */
+.singlegroup div div button{
+  margin-top: 15px;
+  -webkit-border-radius: 18;
+  -moz-border-radius: 18;
+  border-radius: 18px;
+  font-family: Arial;
+  background: #2c9ef5;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 80px 10px 80px;
+  border: solid #ffffff 2px;
+  text-decoration: none;
+}
 .singlegroupHeader{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
