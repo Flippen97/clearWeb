@@ -46,21 +46,24 @@ export default class SingleGroup extends Component{
         </header>
       
         <ul>
-          <li>Jag  {this.state.clear ? "0" : <span>{!this.state.bill ? "-300" : "-150" }</span>}</li>
-          <li>Alex {this.state.clear ? "0" : <span>{!this.state.bill ? "+300" : "+150" }</span>}</li>
+          <li>Jag  {this.state.clear ? "0" : <span>{!this.state.bill ? "- 300" : "- 150" }</span>}</li>
+          <li>Alex {this.state.clear ? "0" : <span>{!this.state.bill ? "300" : "150" }</span>}</li>
         </ul>
-
-        <nav>
-          <button onClick={this.showPrice} className={this.state.pricing ? "activeButton" : ""}>Skuld</button>
-          <button onClick={this.showHistory} className={!this.state.pricing ? "activeButton" : ""}>Historik</button>
-        </nav>
 
         {this.state.pricing && <div>
           <div className="newPurchase">
-            <label>Vad har du köpt? </label>
-            <input type="text"/>
-            <label>Hur mycket kostade det? </label>
-            <input type="text"/>
+            <label className="field a-field a-field_a1 page__field">
+              <input className="field__input" placeholder="Skriv vad du köpt här..." required />
+              <span className="field__label-wrap">
+                <span className="field__label">Vad har du köpt?</span>
+              </span>
+            </label>
+            <label className="field a-field a-field_a1 page__field">
+              <input className="field__input" placeholder="Skriv kostnaden här..." required />
+              <span className="field__label-wrap">
+                <span className="field__label">Hur mycket kostade det?</span>
+              </span>
+            </label>
             <button onClick={this.handleBill}>Lägg till</button>
           </div>
           {!this.state.clear && <div className="solveDebt">
@@ -79,6 +82,11 @@ export default class SingleGroup extends Component{
             <li>Jag - Biljetter 1000:-</li>
           </ul>
         </div>}
+        <nav className="singleNav">
+          <button >Registrera köp</button>
+          <button onClick={this.showPrice} className={this.state.pricing ? "activeButton" : ""}>Skuld</button>
+          <button onClick={this.showHistory} className={!this.state.pricing ? "activeButton" : ""}>Historik</button>
+        </nav>
     </div>
      )
    } 

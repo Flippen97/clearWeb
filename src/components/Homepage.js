@@ -5,7 +5,8 @@ export default class Homepage extends Component{
   state = {
     newGroup: false,
     newGroupName: false,
-    joinedGroupName: false
+    joinedGroupName: false,
+    newGroupNav: false
   }
 
   handleNewGroup = () => {
@@ -15,6 +16,13 @@ export default class Homepage extends Component{
     }
     return this.setState({newGroup:true})
     
+  }
+
+  handleGroupNav = () => {
+    if(this.state.newGroupNav){
+      return this.setState({newGroupNav:false})
+    }
+    return this.setState({newGroupNav:true})
   }
   
   handleJoinGroup = () => {
@@ -32,7 +40,9 @@ export default class Homepage extends Component{
           <span onClick={this.handleNewGroup} className="newGroup"><i className="fa fa-times-circle-o" aria-hidden="true"></i></span>
         </header>
         {this.state.newGroup && <GroupOptions joinGroup={this.handleJoinGroup} 
-                                              newGroup={this.createNewGroup}/>}
+                                              newGroup={this.createNewGroup}
+                                              groupNav={this.handleGroupNav}
+                                              groupState={this.state.newGroupNav}/>}
         <ul>
           <li>Gröna lund <i className="fa fa-chevron-right" aria-hidden="true"></i></li>
           <li onClick={this.props.singlegroup}>Summerburst <i className="fa fa-chevron-right" aria-hidden="true"></i></li>

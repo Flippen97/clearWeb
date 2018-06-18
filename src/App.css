@@ -1,8 +1,3 @@
-@font-face {
-  font-family: FontBureau-MillerBannerLight;
-  src: url(FontBureau-MillerBannerLight.otf) format("opentype");
-}
-
 @font-face{
   font-family: Airways;
   src: url(Airways.ttf) format("opentype");
@@ -140,7 +135,7 @@ main{
   background-image: none;
   background-color: white;
 }
-.homepage button{
+.groupButton{
   margin-top: 15px;
   -webkit-border-radius: 18;
   -moz-border-radius: 18;
@@ -148,10 +143,12 @@ main{
   font-family: Arial;
   background: #2c9ef5;
   color: #ffffff;
-  font-size: 20px;
-  padding: 10px 80px 10px 80px;
+  font-size: 0.9em;
+  padding: 13px 25px;
   border: solid #ffffff 2px;
   text-decoration: none;
+  display: block;
+  margin: 10px auto;
 }
 .homepageHeader{
   display: grid;
@@ -184,10 +181,53 @@ main{
   font-size: 1.5em;
   margin-right: 10px;
 }
-.groupOptions{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+
+
+.group-code{
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
 }
+
+.homepage li i{
+  float: right;
+  margin-right: 13px;
+  color: #2c9ef5;
+}
+
+.bold{
+  font-weight: 700;
+}
+
+.groupOptions label{
+  width: calc(100% - 20px);
+  margin: 0 10px;
+}
+
+.groupOptions nav{
+  margin: 0;
+}
+
+.groupOptions .a-field .field__input, .groupOptions,
+.newPurchase .a-field .field__input{
+  border-bottom: 2px solid #2c9ef5;
+}
+
+.groupOptions .a-field_a1 .field__input:focus,
+.newPurchase .a-field_a1 .field__input:focus{
+  border-color: #2c9ef5;
+}
+
+.newPurchase label {
+  width: calc(100% - 20px);
+  margin: 0 10px;
+}
+
+.newPurchase button {
+  display: block;
+  margin: 10px auto;
+}
+
 ul{
   padding: 0;
   margin: 0 10px;
@@ -230,10 +270,33 @@ li{
   align-items: center;
   justify-content: center;
 }
+
 nav{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: 0 10px;
+}
+
+.singleNav{
+  grid-template-columns: repeat(3, 1fr);
+  position: absolute;
+  bottom: 0;
+  max-width: 420px;
+  width: 100%;
+  border-bottom: 1px solid lightslategray;
+  margin: 0;
+}
+
+.singleNav button{
+  border-top: 1px solid lightslategray;
+}
+.singleNav .activeButton{
+  border-top: 2px solid #2c9ef5;
+  border-bottom: none;
+}
+
+.singleNav button:nth-child(3){
+  border-left: 1px solid lightslategray;
 }
 nav button{
   padding: 10px 0;
@@ -246,6 +309,7 @@ nav button:nth-child(2){
 }
 .activeButton{
   border-bottom: 2px solid #2c9ef5;
+  color:#2c9ef5;
 }
 /*
   Swish image
