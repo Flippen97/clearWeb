@@ -51,8 +51,8 @@ export default class SingleGroup extends Component{
         </ul>
 
         <nav>
-          <button onClick={this.showPrice}>Skuld</button>
-          <button onClick={this.showHistory}>Historik</button>
+          <button onClick={this.showPrice} className={this.state.pricing ? "activeButton" : ""}>Skuld</button>
+          <button onClick={this.showHistory} className={!this.state.pricing ? "activeButton" : ""}>Historik</button>
         </nav>
 
         {this.state.pricing && <div>

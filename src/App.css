@@ -171,6 +171,19 @@ main{
   font-size: 1.5em;
   margin-right: 10px;
 }
+.groupOptions{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+ul{
+  padding: 0;
+  margin: 0 10px;
+}
+li{
+  list-style: none;
+  border-bottom: 1px solid lightslategray;
+  padding: 10px 0 10px 15px;
+}
 /*
   singlegroup
 */
@@ -190,6 +203,23 @@ main{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+nav{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 10px;
+}
+nav button{
+  padding: 10px 0;
+  border: none;
+  background-color: white;
+  border-bottom: 1px solid lightslategray;
+}
+nav button:nth-child(2){
+  border-left: 1px solid lightslategray;
+}
+.activeButton{
+  border-bottom: 2px solid #2c9ef5;
 }
 /*
   Swish image

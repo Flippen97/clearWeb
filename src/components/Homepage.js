@@ -34,11 +34,11 @@ export default class Homepage extends Component{
         {this.state.newGroup && <GroupOptions joinGroup={this.handleJoinGroup} 
                                               newGroup={this.createNewGroup}/>}
         <ul>
-          <li>Gröna lund</li>
-          <li onClick={this.props.singlegroup}>Summerburst</li>
-          <li>Spanien</li>
-          {this.state.newGroupName && <li>Ny grupp</li>}
-          {this.state.joinedGroupName && <li>Joinad grupp</li>}
+          <li>Gröna lund <i className="fa fa-chevron-right" aria-hidden="true"></i></li>
+          <li onClick={this.props.singlegroup}>Summerburst <i className="fa fa-chevron-right" aria-hidden="true"></i></li>
+          <li>Spanien <i className="fa fa-chevron-right" aria-hidden="true"></i></li>
+          {this.state.newGroupName && <li>Ny grupp <i className="fa fa-chevron-right" aria-hidden="true"></i></li>}
+          {this.state.joinedGroupName && <li>Joinad grupp <i className="fa fa-chevron-right" aria-hidden="true"></i></li>}
         </ul>
       </div>
     )
