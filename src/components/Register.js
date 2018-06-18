@@ -5,7 +5,7 @@ export default function Register(props){
   return(
     <div className="register">
       <header className="registerHeader">
-        <div className="registerBack"><i className="fa fa-chevron-left" /><span>Login</span></div>
+        <div className="registerBack" onClick={props.login} ><i className="fa fa-chevron-left" /><span>Login</span></div>
         <div className="registerTitle">Registrera</div>
         <div></div>
       </header>

@@ -6,8 +6,7 @@ export default class SingleGroup extends Component{
     bill: false,
     swish: false,
     clear: false,
-    history: false,
-    pricing: true
+    nav: 1,
   }
 
   handleBill = () => {
@@ -21,11 +20,16 @@ export default class SingleGroup extends Component{
     return this.setState({swish:true})
     
   }
+
   showPrice = () => {
-    this.setState({pricing:true,history:false})
+    this.setState({nav: 1})
   }
   showHistory = () => {
-    this.setState({pricing:false,history:true})
+    this.setState({nav: 3})
+  }
+
+  showDebt = () => {
+    this.setState({nav: 2 })
   }
 
  render(){
@@ -50,8 +54,9 @@ export default class SingleGroup extends Component{
           <li>Alex {this.state.clear ? "0" : <span>{!this.state.bill ? "300" : "150" }</span>}</li>
         </ul>
 
-        {this.state.pricing && <div>
+        {this.state.nav === 1 && <div>
           <div className="newPurchase">
+            <h2>Registrera köp</h2>
             <label className="field a-field a-field_a1 page__field">
               <input className="field__input" placeholder="Skriv vad du köpt här..." required />
               <span className="field__label-wrap">
@@ -66,15 +71,13 @@ export default class SingleGroup extends Component{
             </label>
             <button onClick={this.handleBill}>Lägg till</button>
           </div>
-          {!this.state.clear && <div className="solveDebt">
-            <p>Du är skyldig Alex {!this.state.bill ? "300" : "150"} kr</p>
-            <button onClick={this.handleSwish}>Swisha skuld</button>
-          </div>}
+         
         </div>}
 
-        {this.state.history && <div className="history">
-          <p>Historik</p>
+        {this.state.nav === 3 && <div className="history">
+          <h2>Historik</h2>
           <ul>
+            {this.state.clear && <li>Jag - Betalade av skuld 150:- </li> }
             {this.state.bill && <li>Jag - Lunch 300:-</li>}
             <li>Alex - Skumpa 600:-</li>
             <li>Jag - Betalade av skuld 100:- </li>
@@ -82,10 +85,19 @@ export default class SingleGroup extends Component{
             <li>Jag - Biljetter 1000:-</li>
           </ul>
         </div>}
+
+        {this.state.nav === 2 && <div className="debt">
+          <h2>Dina skulder</h2>
+         {!this.state.clear && <div className="solveDebt">
+            <p>Du är skyldig Alex<span className="bold"> {!this.state.bill ? "300" : "150"} kr </span></p>
+            <button onClick={this.handleSwish}>Swisha skuld</button>
+          </div>}
+          {this.state.clear && <p>Du har inga skulder</p>}
+        </div>}
         <nav className="singleNav">
-          <button >Registrera köp</button>
-          <button onClick={this.showPrice} className={this.state.pricing ? "activeButton" : ""}>Skuld</button>
-          <button onClick={this.showHistory} className={!this.state.pricing ? "activeButton" : ""}>Historik</button>
+          <button onClick={this.showPrice} className={this.state.nav === 1 ? "activeButton" : ""}>Registrera köp</button>
+          <button onClick={this.showDebt} className={this.state.nav === 2 ? "activeButton" : ""}>Skuld</button>
+          <button onClick={this.showHistory} className={this.state.nav === 3 ? "activeButton" : ""}>Historik</button>
         </nav>
     </div>
      )

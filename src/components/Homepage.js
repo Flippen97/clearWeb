@@ -35,14 +35,15 @@ export default class Homepage extends Component{
     return(
       <div className="homepage">
         <header className="homepageHeader">
-          <span className="homepageBack"><i className="fa fa-chevron-left" /><span>Logout</span></span>
+          <span className="homepageBack" onClick={this.props.back}><i className="fa fa-chevron-left" /><span>Logout</span></span>
           <span className="homepageTitle">Dina grupper</span>
           <span onClick={this.handleNewGroup} className="newGroup"><i className="fa fa-times-circle-o" aria-hidden="true"></i></span>
         </header>
         {this.state.newGroup && <GroupOptions joinGroup={this.handleJoinGroup} 
                                               newGroup={this.createNewGroup}
                                               groupNav={this.handleGroupNav}
-                                              groupState={this.state.newGroupNav}/>}
+                                              groupState={this.state.newGroupNav}
+                                              newGroupState={this.state.newGroupName}/>}
         <ul>
           <li>Gröna lund <i className="fa fa-chevron-right" aria-hidden="true"></i></li>
           <li onClick={this.props.singlegroup}>Summerburst <i className="fa fa-chevron-right" aria-hidden="true"></i></li>

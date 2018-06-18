@@ -23,7 +23,7 @@ main{
   text-align: center;
   top: 90px;
   font-family: Airways;
-  font-size: 3.6em;
+  font-size: 3.4em;
   margin: 0;
   color: white;
   text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
@@ -77,7 +77,7 @@ main{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border-bottom: 2px solid white;
-  height: 30px;
+  height: 40px;
   color: #fff;
 }
 .registerBack{
@@ -90,7 +90,7 @@ main{
   font-size: 1.08em;
 }
 .registerTitle{
-  font-size: 1.08em;
+  font-size: 1.1em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,7 +154,7 @@ main{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border-bottom: 2px solid #2c9ef5;
-  height: 30px;
+  height: 40px;
   color: #2c9ef5;
 }
 .homepageBack{
@@ -170,6 +170,7 @@ main{
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.1em;
 }
 .newGroup{
   display: flex;
@@ -178,7 +179,7 @@ main{
 }
 .newGroup i{
   transform: rotate(45deg);
-  font-size: 1.5em;
+  font-size: 1.7em;
   margin-right: 10px;
 }
 
@@ -197,6 +198,7 @@ main{
 
 .bold{
   font-weight: 700;
+  margin-left: 2px;
 }
 
 .groupOptions label{
@@ -257,7 +259,7 @@ li{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border-bottom: 2px solid #2c9ef5;
-  height: 30px;
+  height: 40px;
   color: #2c9ef5;
 }
 .singlegroupBack{
@@ -269,6 +271,38 @@ li{
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.1em;
+}
+
+.newPurchase h2, .history h2, .debt h2{
+  text-align: center;
+  color: #467ea7;
+  font-size: 1.2em;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.debt h2{
+  margin-bottom: 30px;
+}
+
+.debt p{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.solveDebt p{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.solveDebt button{
+  display: block;
+  margin: 0px auto;
+}
+
+button:focus{
+  outline: none;
 }
 
 nav{

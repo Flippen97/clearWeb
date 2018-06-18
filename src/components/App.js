@@ -17,8 +17,9 @@ class App extends Component {
   handleRegister = () => {
     this.setState({ register: true, login: false });
   };
+  
   handleLogin = () => {
-    this.setState({login:true, register:false})
+    this.setState({login:true, register:false, homepage: false})
   };
   
   handleHomepage = () => {
@@ -40,7 +41,7 @@ class App extends Component {
     }
     else if(this.state.homepage){
       view = (
-        <Homepage singlegroup={this.handleSingleGroup} />
+        <Homepage singlegroup={this.handleSingleGroup} back={this.handleLogin}/>
       )
     }
     else if(this.state.singlegroup){

@@ -16,7 +16,8 @@ export default function GroupOptions(props){
       </span>
     </label>
     <button className="groupButton" onClick={props.newGroup}>Lägg till grupp</button>
-    <span className="group-code">Din gruppkod är: <span className="bold">{Math.floor((Math.random() * 9999) + 1000)}</span></span>
+    {props.newGroupState && <span className="group-code">Din gruppkod är:  
+    <span className="bold">{Math.floor((Math.random() * 9999) + 1000)}</span></span>}
     </React.Fragment>}
  
     {!props.groupState &&  
